@@ -1,6 +1,6 @@
-#Thumbor on Elastic Beanstalk with Docker
+# Thumbor on Elastic Beanstalk with Docker
 
-##Prerequisite
+## Prerequisite
 
 - AWS account
 	- IAM creation access
@@ -12,26 +12,25 @@
 	- at least rough knowledge about AWS services
 
 	
-	
-##Scope
+## Scope
 scope of this document is a step by step guide to deploy thumbor on Elastic Beanstalk utilizing public Docker images of [thumbor](http://thumbor.org/).
-In the end this will result in a horizontaly autoscaling setup for fast and relaiable image delivery for any service.
+In the end this will result in a horizontaly autoscaling setup for fast and relaiable image delivery.
 
 Setup in short:
 We are setting up a s3 bucket which is used by thumbor (on beanstalk) to deliver scaled and otimized images to the consumer. Then optionally cloudfront is put on top as CDN.  
 
 __example usecase__: 
-I'm using this setup for a project which serves Millions of image requests on less than 1$ per Million request while the delivery is highly dynamic and big chunks especially requests from mobile - which are device specific - are almost not cachable. My experience so far: now downtime, one time setup nothing to manually maintain cost efficient.
+I'm using this setup for a project which serves Millions of image requests on less than 1$ per Million request while the delivery is highly dynamic and big chunks especially requests from mobile - which are device specific - are almost not cachable. My experience so far: now downtime, one time setup nothing to manually maintain, very cost efficient.
 
-##Seting up S3
+## Seting up S3
 1. Navigate to [S3](https://console.aws.amazon.com/s3/home) 
-2. Create a bucket ![CreateBucket](assets/s3/create.png)
+2. Create a bucket ![CreateBucket](assets/s3/create-bucket-button.png)
+3. Find a suitable name like and click create
 
 
 
 
 [createBucket]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-
 
 
 
